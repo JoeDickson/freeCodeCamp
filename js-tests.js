@@ -7,8 +7,12 @@ function confirmEnding(str, target) {
     // "Never give up and good luck will find you."
     // -- Falcor
 
-    return (target === str.substr(str.length - target.length, str.length));
 
+    //return 
+    show((target === str.substr(str.length - target.length, str.length)));
+
+
+    //return str;
 }
 
-confirmEnding("Bastian", "n");
+confirmEnding("Open sesame", "pen");
