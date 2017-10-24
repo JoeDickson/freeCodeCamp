@@ -2,16 +2,16 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
+function titleCase(str) {
 
-function findLongestWord(str) {
-
-    var strArr = [];
     strArr = str.split(" ");
-    strArr.sort(function(a, b) {
-        return b.length - a.length;
-    });
+    for (i = 0; i <= strArr.length - 1; i++) {
+        strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
+        show(strArr[i]);
+    }
 
-    return (strArr[0].length);
-};
 
-findLongestWord("The quick brown fox jumped over the lazy dog");
+    return str;
+}
+
+titleCase("I'm a little tea pot");
