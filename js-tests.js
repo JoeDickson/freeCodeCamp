@@ -2,24 +2,16 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
-function palindrome(str) {
-    // Good luck!
-    var cleanStr = "";
+
+function findLongestWord(str) {
+
     var strArr = [];
-    cleanStr = str.replace(/\W+/g, '');
-    cleanStr = cleanStr.replace(/_/g, '');
-    lowerCaseStr = cleanStr.toLowerCase();
-    origStr = lowerCaseStr;
-    strArr = lowerCaseStr.split("").reverse();
-    strRev = strArr.join("");
+    strArr = str.split(" ");
+    strArr.sort(function(a, b) {
+        return b.length - a.length;
+    });
 
-    show(strRev);
-    if (strRev == origStr)
-        return true;
-    else
-        return false;
-}
+    return (strArr[0].length);
+};
 
-
-
-show(palindrome("My age is 0, 0 si ega ym."));
+findLongestWord("The quick brown fox jumped over the lazy dog");
