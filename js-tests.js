@@ -7,7 +7,7 @@ function truncateString(str, num) {
 
     if (str.length > num) {
         if (num <= 3)
-            return str.slice(0, num) + "...!";
+            return str.slice(0, num) + "...";
         else
             return str.slice(0, num - 3) + "...";
     } else
@@ -15,4 +15,4 @@ function truncateString(str, num) {
     //return 
 }
 
-truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+show(truncateString("A-", 1));
