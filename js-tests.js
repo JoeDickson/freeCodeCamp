@@ -2,15 +2,17 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
-function repeatStringNumTimes(str, num) {
-    // repeat after me
-    newStr = "";
-    if (num <= 0)
-        return "";
-    for (i = 1; i <= num; i++) {
-        newStr += str;
-    }
-    return newStr;
+function truncateString(str, num) {
+    // Clear out that junk in your trunk
+
+    if (str.length > num) {
+        if (num <= 3)
+            return str.slice(0, num) + "...!";
+        else
+            return str.slice(0, num - 3) + "...";
+    } else
+        return str;
+    //return 
 }
 
-repeatStringNumTimes("*", 8);
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
