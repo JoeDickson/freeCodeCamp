@@ -8,8 +8,7 @@ function titleCase(str) {
     for (i = 0; i <= strArr.length - 1; i++) {
         strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
     }
-
-
+    str = strArr.join(" ");
     return str;
 }
 
