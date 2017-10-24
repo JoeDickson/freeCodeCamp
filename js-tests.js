@@ -2,17 +2,15 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
-
-function confirmEnding(str, target) {
-    // "Never give up and good luck will find you."
-    // -- Falcor
-
-
-    //return 
-    show((target === str.substr(str.length - target.length, str.length)));
-
-
-    //return str;
+function repeatStringNumTimes(str, num) {
+    // repeat after me
+    newStr = "";
+    if (num <= 0)
+        return "";
+    for (i = 1; i <= num; i++) {
+        newStr += str;
+    }
+    return newStr;
 }
 
-confirmEnding("Open sesame", "pen");
+repeatStringNumTimes("*", 8);
