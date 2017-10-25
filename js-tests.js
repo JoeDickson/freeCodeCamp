@@ -2,10 +2,12 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
+function destroyer(arr) {
+    // Remove all the values
+    show(arguments);
+    show(arr);
 
-function bouncer(arr) {
-    // Don't show a false ID to this bouncer.
-    return arr.filter(Boolean);
+    return arr;
 }
 
-show(bouncer([1, null, NaN, 2, undefined]));
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
