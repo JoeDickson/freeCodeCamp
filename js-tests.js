@@ -1,22 +1,32 @@
 const show = x => console.log(x);
-
 /* ======================================================= */
 
-function getIndexToIns(arr, num) {
-    // Find my place in this sorted array.
+function rot13(str) {
 
-    sortedArr = arr.sort(function compareNumbers(a, b) {
-        return a - b;
-    });
+    var decodedStr = "";
+    var strArr = str.split(" ");
+    var checkLetters = /^[0-9a-zA-Z]+$/;
 
-    for (i = 0; i <= sortedArr.length; i++) {
-        if (num == sortedArr[i])
-            return i;
-        else
-        if (num >= sortedArr[i] && num <= sortedArr[i + 1])
-            return i + 1;
+    for (var i = 0; i <= strArr.length - 1; i++) {
+        for (var j = 0; j <= strArr[i].length - 1; j++) {
+            if (strArr[i][j].match(checkLetters)) {
+                letter = strArr[i][j].charCodeAt(0);
+                if (letter >= 97 && letter <= 22)
+                    letter = String.fromCharCode((letter - 97 + 13) % 26 + 97);
+                else if (letter >= 65 && letter <= 90)
+                    letter = String.fromCharCode((letter - 65 + 13) % 26 + 65);
+
+                decodedStr += letter;
+
+            } else
+                decodedStr += strArr[i][j];
+
+        }
+        decodedStr += " ";
     }
-    return i - 1;
+    return decodedStr;
 }
 
-show(getIndexToIns([3, 10, 5], 3));
+// Change the inputs below to test
+rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.")
+    //should decode to "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.");
