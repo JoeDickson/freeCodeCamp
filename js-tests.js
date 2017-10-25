@@ -2,10 +2,20 @@ const show = x => console.log(x);
 
 /* ======================================================= */
 
-function slasher(arr, howMany) {
-    // it doesn't always pay to be first
-    newArr = arr.splice(howMany);
-    return newArr;
+function mutation(arr) {
+
+    targetStr = arr[0].toLowerCase();
+    srchStr = arr[1].toLowerCase();
+    boolFound = true;
+    show(targetStr);
+    show(srchStr);
+
+    for (i = 0; i <= srchStr.length - 1; i++) {
+        show(srchStr[i]);
+        if (targetStr.indexOf(srchStr[i]) < 0)
+            boolFound = false;
+    }
+    return boolFound;
 }
 
-slasher(["burgers", "fries", "shake"], 1);
+show(mutation(["hello", "hey"]));
