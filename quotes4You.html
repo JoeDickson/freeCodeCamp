@@ -1,0 +1,116 @@
+<!-- ******************************************
+*  Author : Joe Dickson   
+*  Created On : Fri Oct 27 2017
+*  File : quotes4You.html
+******************************************* -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <title>Random Quotes</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- jQuery library  -->
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script>
+            var API_URL = "http://quotesondesign.com/wp-json";
+            const show = x => console.log(x);
+
+            $(document).ready((function() {
+                    $(".quote").hide();
+                    const API_URL = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+
+                    $(".btn-primary").click(function() {
+                        $.getJSON(API_URL, function(a) {
+                            $(".well").html(a[0].content + "<p>— " + a[0].title + "</p>");
+                            $(".quote").show();
+                        });
+
+                    });
+
+
+                })) // end document ready
+        </script>
+
+        <style>
+            body {
+                margin: 10px 20px 20px 20px;
+                background-image: url('https://orig00.deviantart.net/efce/f/2012/279/e/b/manor__library_by_tsonline-d5gxn44.jpg');
+            }
+            
+            h2 {
+                color: rgb(250, 215, 175);
+                text-align: center;
+                margin-bottom: 25px;
+                margin-top: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 25px;
+            }
+            
+            .text-center::before {
+                content: "";
+                margin-left: calc(100% - 75%);
+            }
+            
+            .well {
+                height: auto;
+                width: 50%;
+                background-color: rgba(245, 245, 245, 0.4);
+                border-radius: 5%;
+                width: 400px;
+                color: white;
+                padding: 10px 10px 10px 10px;
+            }
+            
+            .center-div {
+                display: table;
+                margin: 0 auto;
+            }
+            
+            .my-new-list {
+                color: white;
+            }
+        </style>
+
+    </head>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row text-center">
+            <h2>Random Quotes To Make Your Day</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 well quote"></div>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div class="row text-center center-div">
+            <div class="col-xs-12">
+                <button id="getQuote" class="btn btn-primary">
+                    Get A Quote
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
