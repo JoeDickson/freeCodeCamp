@@ -24,25 +24,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- jQuery library  -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script>
-            var API_URL = "http://quotesondesign.com/wp-json";
-            const show = x => console.log(x);
+        <script src="quotes.js"></script>
 
-            $(document).ready((function() {
-                    $(".quote").hide();
-                    const API_URL = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-
-                    $(".btn-primary").click(function() {
-                        $.getJSON(API_URL, function(a) {
-                            $(".well").html(a[0].content + "<p>— " + a[0].title + "</p>");
-                            $(".quote").show();
-                        });
-
-                    });
-
-
-                })) // end document ready
-        </script>
 
         <style>
             body {
