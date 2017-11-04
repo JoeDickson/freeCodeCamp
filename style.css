@@ -1,0 +1,81 @@
+/******************************************
+*  Author : Joe Dickson   
+*  Created On : Sat Nov 04 2017
+*  File : styles.css
+*******************************************/
+
+body {
+    font: 24px Helvetica;
+    background: #999999;
+}
+
+img {
+    height: 30px;
+    text-overflow: auto;
+    margin-top: 5px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+header {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 40px;
+    border: 1px solid #eebb55;
+    border-radius: 7pt;
+    background: #3b3218;
+    color: white;
+}
+
+.title {
+    margin-left: 15px;
+    vertical-align: middle;
+    /* margin-top: 5px; */
+}
+
+#main {
+    min-height: 600px;
+    margin: 0px;
+    padding: 0px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+#main>article {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #cccc33;
+    border-radius: 7pt;
+    background: #dddd88;
+    -webkit-order: 2;
+    order: 2;
+    max-height: auto;
+}
+
+.bio {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+/* Too narcolumn to support three columns */
+
+@media all and (max-width: 640px) {
+    #main,
+    #page {
+        -webkit-flex-flow: column;
+        flex-flow: column;
+    }
+    #main>article {
+        /* Return them to document order */
+        -webkit-order: 0;
+        order: 0;
+    }
+    header {
+        min-height: 25px;
+        max-height: 25px;
+    }
+}
