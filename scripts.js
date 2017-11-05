@@ -24,9 +24,12 @@ $(function() {
             success: function(user_data) {
                 user_id = user_data.users[0]._id;
                 console.log(user_data);
-                html += "<article class='user_row' id='" + user_id + "'>" +
+                html += "<article class='user_row' id='_" + user_id + "'>" +
                     "<img src='" + user_data.users[0].logo + "'/>" +
-                    user_data.users[0].display_name;
+                    "<span class='display_name'><a href='http://www.twitch.tv/" + user_data.users[0].display_name + "' target='_blank'>" +
+                    user_data.users[0].display_name + "</a></span>" +
+                    "<span class='status' id='" + user_id + "'>Online</span>" +
+                    "<span class='status_descr' id='status_descr" + user_id + "'></span>";
                 if (user_data.users[0].bio != null)
                     html += "<span class='bio'>" + user_data.users[0].bio + "</span>";
 
@@ -40,11 +43,15 @@ $(function() {
                     },
 
                     success: function(channel_data) {
-                        console.log(channel_data);
-                        // if (channel_data.stream == null)
-                        //     $ += "<span class='offline'>Offline</span>";
+                        console.log(channel_data.stream);
+                        if (channel_data.stream == null) {
+                            $("#" + user_data.users[0]._id).html("Offline");
+                            $("#_" + user_data.users[0]._id).css("background", "#d5c7c7");
+                        } else {
+                            $("#" + user_data.users[0]._id).css("color", "green");
+                            $("#status_descr" + user_data.users[0]._id).html("<br>" + channel_data.stream.channel.status + "<br>");
 
-
+                        }
 
                     }
                 });
@@ -55,6 +62,7 @@ $(function() {
         });
 
     }
+
 
 
 }); // end document ready
