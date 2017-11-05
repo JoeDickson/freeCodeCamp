@@ -1,0 +1,140 @@
+/******************************************
+*  Author : Joe Dickson   
+*  Created On : Wed Nov 01 2017
+*  File : style.css
+*******************************************/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+article,
+section {
+    display: block;
+}
+
+#container {
+    margin: auto;
+    background: rgb(49, 34, 9);
+    color: rgb(111, 187, 204);
+}
+
+.wrapper {
+    width: auto;
+    margin: auto;
+    height: 600px;
+}
+
+section {
+    float: center;
+    margin: 0px 20px 20px 20px;
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+article {
+    width: auto;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+    margin: 10px;
+    color: rgb(111, 187, 204);
+}
+
+input[type=text] {
+    border-radius: 10px;
+    border: 3px solid rgb(111, 187, 204);
+    background-color: rgb(49, 34, 9);
+}
+
+.search-box,
+.close-icon,
+.search-wrapper {
+    position: relative;
+    padding: 5px 0px 5px 5px;
+}
+
+.search-wrapper {
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.search-box:focus {
+    box-shadow: 0 0 15px 5px #b0e0ee;
+    border: 2px solid #bebede;
+}
+
+.close-icon {
+    border: 1px solid transparent;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0;
+    cursor: pointer;
+}
+
+.close-icon:after {
+    content: "X";
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #FA9595;
+    z-index: 1;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    font-size: 12px;
+    box-shadow: 0 0 2px #E50F0F;
+    cursor: pointer;
+}
+
+.search-box:not(:valid)~.close-icon {
+    display: none;
+}
+
+.results {
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+    border: 3px solid rgb(111, 187, 204);
+    visibility: hidden;
+    width: 90%;
+    margin-left: 50px;
+    padding-bottom: 150px;
+}
+
+ul {
+    list-style-type: none;
+    background-color: rgb(49, 34, 9);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+li {
+    margin-top: 10px
+}
+
+p {
+    font-size: 15px;
+    padding: 5px 15px 5px 15px;
+}

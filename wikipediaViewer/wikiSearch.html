@@ -1,0 +1,56 @@
+<!-- ******************************************
+*  Author : Joe Dickson   
+*  Created On : Wed Nov 01 2017
+*  File : wikiSearch.html
+******************************************* -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Wikipedia Adventures</title>
+    <meta name="description" content="HTML5">
+    <meta name="author" content="Joe Dickson">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>  
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+    <![endif]-->
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <!--container-->
+    <div id="container">
+        <!--start wrapper-->
+        <div class="wrapper">
+            <!--start section-->
+            <section>
+                <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click me for a random article</a>
+                <article>
+                    <em>Or</em> Search Here:
+                    <div class="search-wrapper">
+                        <form id="wikiForm">
+                            <input type="text" name="searchText" required class="search-box" placeholder="Enter search term" />
+                            <button class="close-icon" type="reset"></button>
+                            <!-- <input type="search" name="searchText" required> -->
+                        </form>
+                    </div>
+                </article>
+                <div class="results"></div><br><br>
+            </section>
+
+        </div>
+        <!--end wrapper-->
+
+    </div>
+</body>
+
+</html>
