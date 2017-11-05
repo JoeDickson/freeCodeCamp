@@ -30,18 +30,19 @@
         body {
             color: #325050;
             margin: auto;
-            max-width: 400px;
-            width: 50%;
+            max-width: 600px;
+            width: 70%;
             margin: 0 auto;
-            padding-top: 5%;
+            padding-top: 10px;
         }
         
         .header {
             font-size: 44px;
+            margin-left: 20px;
         }
         
         .location {
-            font-size: 35px;
+            font-size: 30px;
         }
         
         .weather {
@@ -53,28 +54,46 @@
             clear: left;
             float: left;
             position: relative;
-            left: 25%;
+            width: 100%;
+            text-align: center;
         }
         
-        .location,
-        .weather {
+        .weather,
+        .temperatureC {
             clear: left;
             float: left;
             position: relative;
-            left: 25%;
+            /* left: 25%; */
+        }
+        
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: #325050;
+            text-align: center;
+        }
+        
+        .redC,
+        .redF {
+            color: rgb(198, 23, 23);
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container-fluid centered">
-        <div class="text-center header">Your Weather</div>
-        <h3 class="location"></h3>
+    <div class="container-fluid centered main">
+        <div class="text-center header centered">Your Weather</div>
+        <h3 class="location centered"></h3>
         <div><br></div>
 
-        <div class="weather"></div>
+        <div class="weather centered"></div>
 
+
+        <footer>A page by Joe D.</footer>
     </div>
 
 

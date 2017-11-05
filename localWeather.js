@@ -21,17 +21,28 @@ $(document).ready((function() {
             $.getJSON(WEATHER).done(function(weather) {
                 var tempC = weather.main.temp;
                 var tempF = tempC * 9 / 5 + 32;
-                $(".weather").html(weather.weather[0].main + "<img height='40px' width='100px' src=" + weather.weather[0].icon + ">");
+                $(".weather").html(weather.weather[0].main + "<img height='40px' width='100px' src=" + weather.weather[0].icon + "><span class='Ctemp'>" + Number(tempC).toFixed(1) + " &deg<span class='redC'>C</span></span><span class='Ftemp'>" + Number(tempF).toFixed(1) + " &deg<span class='redF'>F</span></span>");
+                $(".Ftemp").hide();
+
+                $(".redC").click(function() {
+                    $(".Ctemp").hide();
+                    $(".Ftemp").show();
+                });
+                $(".redF").click(function() {
+                    $(".Ftemp").hide();
+                    $(".Ctemp").show();
+                });
+
+
             })
 
         }
 
+
         function errorFunction() {
-            // error haandler
+            // error haadler
+            $(".main").html("Unable to retrieve location.")
         }
-
-
-
 
 
     })) // end document ready
